@@ -341,7 +341,7 @@ body .out-wrapper .container {
     display: block;
     width: auto;
     height: auto;
-    max-width: 100%;
+    max-width: calc(100vw - 60px);
     max-height: calc(100vh - 60px);
     position: absolute;
     top: 0;
