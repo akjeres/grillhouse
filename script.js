@@ -1,22 +1,42 @@
 (function(){
+    if ( !(
+        document.getElementById('bbq-form')
+        && document.getElementById('galleryModal')
+        )) return;
+
     window.addEventListener('load', function() {
+        document.querySelector('.preloader').classList.remove('in');
         var form_id= 'bbq-form';
         var form = $('#' + form_id);
+        var image_selector = '.page-photos_item';
+
+        $(image_selector).on('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            var target = $(e.target.closest(image_selector));
+            var popup = $('#galleryModal');
+            var img = popup.find('img');
+            var ref_img = target.find('img');
+
+            img.prop('src', ref_img.prop('src')).prop('alt', ref_img.prop('alt'));
+            popup.modal('show');
+        });
 
         form.on('submit', function(e) {
             e.preventDefault();
-            form.find('input').removeClass('error');
+            form.find('input, select, textarea').removeClass('error');
             var name = form.find('[name=name]');
             var phone = form.find('[name=phone]');
-            var message = form.find('[name=message]');
+            var amount = form.find('[name=amount]');
             var notif = form.parent().parent().find('.modal-message');
             var notif_title = notif.find('h4');
             var notif_message = notif.find('p');
 
-            var nameFlag = validateName(name);
+            var nameFlag = validateName(amount);
             var phoneFlag = validatePhone(phone);
 
-            if (false  && !(
+            if (!(
                     nameFlag && phoneFlag
                 )) return;
 
