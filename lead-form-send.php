@@ -29,7 +29,7 @@ if(isset($_POST['message'])&&trim($_POST['message'])!=""){
     $msg = "Сообщение:" . "\n" . $_POST['message'];
 }
 
-$recepientAddress = '';
+$recepientAddress = 'vi.akhrimenko@gmail.com';
 $title = 'Заявка на Мастер-класс по приготовлению барбекю от Weber';
 $message = (($name == '') ? '' : "Имя: " . $name. "\n")
     . (validatePhone($phone) ?  "Телефон: " . $phone . "\n" : '')
