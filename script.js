@@ -81,10 +81,14 @@
                     } catch (e) {
                         console.error(e.message);
                     }
+                },
+                complete: function() {
                     setTimeout(function () {
                         form.parent().addClass('in').prev().removeClass('in');
                         notif_title.text('');
                         notif_message.text('');
+                        $('button[data-target="#myModal"]').prop('disabled', false);
+                        form[0].reset();
                     }, 3000);
                 }
             });
