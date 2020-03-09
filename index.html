@@ -776,27 +776,42 @@ jQuery(document).ready(function($) {
 						<div class="modal-content">
 							<div class="modal-header">
 								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-								<h3 class="modal-title" id="myModalLabel">Заполните форму, чтобы забронировать место</h3>
+								<h3 class="modal-title" id="myModalLabel">Заполните форму, <br />чтобы забронировать&nbsp;место</h3>
 							</div>
 							<div class="modal-body">
 								<div class="modal-message fade" style="pointer-events: none">
-									<h4>1</h4>
-									<p>2</p>
+									<h4></h4>
+									<p></p>
 								</div>
 								<div class="modal-form_wrapper fade in">
-									<form id="bbq-form" class="modal-form" action="https://dummy.wibe.pro/send.php" method="post">
-										<input type="text" name="name" placeholder="Имя" />
-										<input id="order_popup_phone" type="tel" name="phone" placeholder="Телефон *" />
-										<label>
-											<span>Количество человек *</span>
-											<select name="amount">
-												<option value=""></option>
-												<option value="1">1</option>
-												<option value="2">2</option>
-												<option value="Больше 2">Больше 2</option>
-											</select>
+									<form id="bbq-form" class="modal-form" action="/send.php" method="post">
+										<div class="modal-form_row">
+											<div class="modal-form_item">
+												<input type="text" name="name" placeholder="Имя" />
+											</div>
+											<div class="modal-form_item">
+												<input id="order_popup_phone" type="tel" name="phone" placeholder="Телефон *" />
+
+											</div>
+										</div>
+										<label class="modal-form_row">
+												<span class="modal-form_item">
+													<span>Количество человек *</span>
+												</span>
+											<span class="modal-form_item">
+													<select name="amount">
+														<option value=""></option>
+														<option value="1">1</option>
+														<option value="2">2</option>
+														<option value="Больше 2">Больше 2</option>
+													</select>
+												</span>
 										</label>
-										<input type="submit" value="Отправить">
+										<div class="modal-form_row">
+											<div class="modal-form_item">
+												<input class="buy-option top-banner_button" type="submit" value="Отправить">
+											</div>
+										</div>
 									</form>
 								</div>
 							</div>

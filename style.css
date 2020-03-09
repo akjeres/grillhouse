@@ -235,6 +235,108 @@ body .out-wrapper .container {
 }
 
 /* popups */
+#myModal .modal-header {
+    text-align: center;
+    padding: 15px 45px;
+    position: relative;
+}
+#myModal .modal-header .close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+#myModal .modal-title {
+    font-size: 24px;
+}
+#myModal .modal-body {
+    position: relative;
+}
+#myModal .modal-message {
+    padding: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: -1;
+    background-color: #fff;
+}
+#myModal .modal-message.in {
+    z-index: 1;
+}
+#myModal .modal-message.in + .modal-form_wrapper {
+    pointer-events: none!important;
+    z-index: -1;
+    opacity: 0;
+}
+#myModal .modal-message h4 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+#myModal .modal-message p {
+    font-size: 18px;
+    margin-bottom: 0;
+}
+#myModal .modal-form_row {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    width: calc(100% + 30px);
+    margin: 0 auto 15px -15px;
+    max-width: unset;
+}
+#myModal .modal-form_item {
+    display: block;
+    width: 100%;
+    padding: 0 15px;
+    max-width: unset;
+}
+#myModal label,
+#myModal select {
+    cursor: pointer;
+}
+#myModal .modal-form_item input:not([type="submit"]),
+#myModal .modal-form_item select,
+#myModal .modal-form_item textarea {
+    box-shadow: none;
+    outline: none;
+    border-radius: 0;
+    border: 1px solid rgb(26, 26, 26);
+    background-color: transparent;
+    font-size: 18px;
+    line-height: 25px;
+    padding: 6px 15px;
+    display: block;
+    width: 100%;
+    color: #666;
+    line-height: 25px;
+}
+#myModal .modal-form_item span {
+    font-size: 18px;
+    line-height: 25px;
+    padding: 6px 0;
+    display: inline-block;
+    color: #666;
+}
+#myModal .modal-form_item input,
+#myModal .modal-form_item textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+#myModal .modal-form_item input[type="submit"] {
+    margin: 0 auto;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+}
+#myModal .modal-form_item input.error,
+#myModal .modal-form_item select.error,
+#myModal .modal-form_item textarea.error {
+    border-color: #e01c1c;
+}
 #galleryModal .modal-dialog img {
     display: block;
     width: auto;
@@ -276,6 +378,22 @@ body .out-wrapper .container {
     .page-content .map_container.d-flex {
         font-size: 28px;
         margin-bottom: 25px;
+    }
+    #myModal .modal-title {
+        font-size: 22px;
+    }
+    #myModal .modal-message h4 {
+        font-size: 18px;
+    }
+    #myModal .modal-message p {
+        font-size: 16px;
+    }
+    #myModal .modal-form_item input:not([type="submit"]),
+    #myModal .modal-form_item input[type="submit"],
+    #myModal .modal-form_item select,
+    #myModal .modal-form_item span,
+    #myModal .modal-form_item textarea {
+        font-size: 16px;
     }
     .page-content .top-banner_wrapper,
     .page-content .page-text_wrapper,
@@ -337,6 +455,9 @@ body .out-wrapper .container {
 }
 
 @media (max-width: 479px) {
+    #myModal .modal-title br {
+        display: none !important;
+    }
     .page-content .video_banner__iframe {
         height: 169px;
     }
@@ -355,5 +476,22 @@ body .out-wrapper .container {
     }
     .page-content .page-photos_item:last-child {
         margin-bottom: 0;
+    }
+    #myModal .modal-form_row {
+        display: block;
+        width: 100%;
+        margin: 0 auto 15px auto;
+    }
+    #myModal .modal-form_row:first-child .modal-form_item + .modal-form_item {
+        margin-top: 15px;
+    }
+    #myModal .modal-form_row:last-child {
+        margin: 0 auto;
+    }
+    #myModal .modal-form_item {
+        padding: 0;
+    }
+    #myModal .modal-form_item input[type="submit"] {
+        width: 100%;
     }
 }
